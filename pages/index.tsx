@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   const languges = [
     {
       name: "khmer",
-      link: "https://www.youtube.com/results?search_query=navigation+bar+next+js",
+      link: "#",
     },
     { name: "English", link: "/" },
     { name: "French", link: "/" },
@@ -24,11 +24,24 @@ const Home: NextPage = () => {
     { place: "Add Guest", href: "/" },
   ];
 
+  const placeButton = [
+    { btnName: "Cabin", icon: "/img/cabin.png", href: "/" },
+    { btnName: "Island", icon: "/img/vector.png", href: "/" },
+    { btnName: "Island", icon: "/img/vector.png", href: "/" },
+    { btnName: "Island", icon: "/img/vector.png", href: "/" },
+    { btnName: "Island", icon: "/img/vector.png", href: "/" },
+    { btnName: "Island", icon: "/img/vector.png", href: "/" },
+    { btnName: "Island", icon: "/img/vector.png", href: "/" },
+    { btnName: "Island", icon: "/img/vector.png", href: "/" },
+    // { btnName: "Island", icon: "/img/vector.png", href: "/" },
+    // { btnName: "Island", icon: "/img/vector.png", href: "/" },
+  ];
+
   // function clickHandling() {
   //   return alert("Hey.......");
   // }
   return (
-    <div className="bg-[url('/img/bg.png')]">
+    <div className="bg-[url('/img/amsterdam.jpg')]">
       <nav className="flex justify-between px-4 py-3 font-semibold md:px-7 md:text-xl text-white bg-emerald-600">
         <div className="flex items-center">
           <GoLocation className="mr-1" />
@@ -57,17 +70,17 @@ const Home: NextPage = () => {
         </div>
         <Menu as="div">
           <Menu.Button>
-            <div className="flex items-center bg-emerald-600 rounded-l-md px-6 py-1  text-xl text-white">
+            <div className="flex items-center bg-emerald-600 rounded-l-md px-6 py-1  text-xl text-white outline outline-emerald-600 hover:outline-emerald-200">
               <TbWorld />
               <p className="mx-2">Language</p>
               <RiArrowDropDownLine className="w-8 h-8" />
             </div>
             <Menu.Items>
-              {languges.map((v, idx) => {
+              {languges.map((v) => {
                 return (
                   <a
                     href={v.link}
-                    className="block bg-white  hover:bg-emerald-600 rounded-l-md "
+                    className=" block bg-white  hover:bg-emerald-600 hover:text-white rounded-l-md  "
                   >
                     {v.name}
                   </a>
@@ -85,18 +98,53 @@ const Home: NextPage = () => {
           placeholder="Search destinations"
           className=" h-8 pl-4 outline outline-offset-0 outline-emerald-600 md:h-12 md:w-80 rounded-l-md"
         />
-        <BiSearch className=" h-8 w-8 px-1 bg-emerald-600 rounded-r-md  outline outline-offset-0 outline-emerald-600 md:h-12 hover:bg-white hover:text-emerald-600" />
+        <BiSearch className=" h-8 w-8 px-1 bg-emerald-600 rounded-r-md  outline outline-offset-0 outline-emerald-600 md:h-12 hover:bg-white hover:text-emerald-600 text-white" />
       </div>
       <div className="flex mt-5 justify-center">
-        <button className=" hover:bg-white hover:text-emerald-600  md:text-lg md:px-4 md:py-2   bg-emerald-600 px-3 rounded-md text-white py-1">
+        <button className=" hover:bg-white hover:text-emerald-600  hover:outline md:text-lg md:px-4 md:py-2   bg-emerald-600 px-3 rounded-md text-white py-1">
           Any Where
         </button>
-        <button className=" hover:bg-white hover:text-emerald-600  md:text-lg md:px-4 md:py-2 md:mx-8  bg-emerald-600 px-3 rounded-md text-white py-1 mx-4">
+        <button className=" hover:bg-white hover:text-emerald-600  hover:outline md:text-lg md:px-4 md:py-2 md:mx-8  bg-emerald-600 px-3 rounded-md text-white py-1 mx-4">
           Any Week
         </button>
-        <button className=" hover:bg-white hover:text-emerald-600  md:text-lg md:px-4 md:py-2   bg-emerald-600 px-3 rounded-md text-white py-1">
+        <button className=" hover:bg-white hover:text-emerald-600  hover:outline md:text-lg md:px-4 md:py-2   bg-emerald-600 px-3 rounded-md text-white py-1">
           Add Guest
         </button>
+      </div>
+
+      {/* The flilter button below Searching bar ----------------------- */}
+      <div className="flex justify-center">
+        {placeButton.map((key) => {
+          return (
+            <div className=" flex bg-white outline  outline-emerald-600 md:text-sm text-xs  rounded-lg  mt-5 md:w-16 md:h-16 w-14 h-14  text-emerald-600  font-semibold  justify-center mx-2 hover:outline-emerald-200  ">
+              <button className=" w-14 h-14 md:w-16 md:h-16  rounded-lg ">
+                <Image src={key.icon} width={25} height={30} />
+                <div>{key.btnName}</div>
+              </button>
+            </div>
+          );
+        })}
+      </div>
+      <div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
+        <div>hi</div>
       </div>
     </div>
   );
